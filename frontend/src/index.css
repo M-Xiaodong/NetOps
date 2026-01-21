@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+
+  --color-info: hsl(var(--info));
+  --color-info-foreground: hsl(var(--info-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-fade-in: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slide-up: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-scale-in: scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  :root {
+    /* Premium Light Theme - Clean, Airy, Sophisticated */
+    --background: 210 20% 98%;
+    /* Very subtle cool grey */
+    --foreground: 220 15% 10%;
+    /* Soft black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 10%;
+
+    /* Brand Color - Elegant Tech Blue */
+    --primary: 220 80% 56%;
+    /* Softer, more vibrant blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 15% 10%;
+
+    /* Semantic Colors - Vibrant but not harsh */
+    --success: 150 60% 40%;
+    /* Emerald */
+    --success-foreground: 0 0% 100%;
+
+    --warning: 35 90% 50%;
+    /* Amber */
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 80% 60%;
+    /* Soft Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --info: 200 90% 48%;
+    /* Sky */
+    --info-foreground: 0 0% 100%;
+
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 220 14% 94%;
+    --accent-foreground: 220 15% 10%;
+
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 226 70% 55%;
+
+    --radius: 1rem;
+    /* Modern large radius */
+  }
+
+  .dark {
+    /* Premium Dark Theme - Deep Navy/Slate, not pitch black */
+    --background: 224 25% 8%;
+    /* Deep Navy */
+    --foreground: 210 20% 98%;
+
+    --card: 224 25% 10%;
+    /* Slightly lighter */
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 25% 10%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 226 80% 65%;
+    /* Brighter Blue for dark mode */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 224 20% 16%;
+    --secondary-foreground: 210 20% 98%;
+
+    --success: 150 50% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 35 90% 60%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --info: 200 80% 60%;
+    --info-foreground: 0 0% 100%;
+
+    --muted: 224 20% 16%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 224 20% 16%;
+    --accent-foreground: 210 20% 98%;
+
+    --border: 224 20% 16%;
+    --input: 224 20% 16%;
+    --ring: 226 80% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Prevent body scroll, handle inside app */
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-sans selection:bg-primary/20 selection:text-primary;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Premium Utilities */
+.glass-panel {
+  @apply bg-white/60 dark:bg-black/40 backdrop-blur-xl border border-white/20 dark:border-white/5 shadow-sm;
+}
+
+.premium-card {
+  @apply bg-card border border-border/50 transition-all duration-300 hover:-translate-y-1;
+  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.05);
+}
+
+.premium-card:hover {
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+}
+
+.premium-shadow {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.04), 0 12px 24px rgba(0, 0, 0, 0.04);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600 dark:from-blue-400 dark:to-purple-400;
+}
+
+/* Premium Pill Button Styles */
+.btn-pill {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium cursor-pointer;
+}
+
+.btn-pill-primary {
+  @apply bg-primary/10 text-primary shadow-sm ring-1 ring-primary/20 hover:bg-primary/20 hover:shadow-md hover:-translate-y-0.5;
+}
+
+.btn-pill-ghost {
+  @apply text-muted-foreground hover:text-foreground hover:bg-accent/50;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted-foreground) / 0.3);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* ==================================================================================
+   Monaco Editor 搜索栏修复 V7 (宽泛选择器版)
+   策略：
+   1. 使用属性选择器 [class*="close"] 强力命中关闭按钮
+   2. 增加对 Input 内部 toggles 的类名匹配
+   3. 强制 min-width 防止换行
+   ================================================================================== */
+
+/* 1. 隐藏原生 Tooltip */
+.monaco-hover,
+.monaco-editor-hover,
+[class*="monaco-hover"] {
+  display: none !important;
+}
+
+/* 2. 搜索框位置 */
+.monaco-editor .find-widget,
+.find-widget {
+  top: 10px !important;
+  right: 28px !important;
+  z-index: 99999 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  overflow: visible !important;
+  border-radius: 4px !important;
+  width: auto !important;
+  min-width: 420px !important;
+  /* 加宽 */
+  padding-right: 48px !important;
+}
+
+/* 3. 强制 Flex 内容布局 */
+.monaco-editor .find-widget>.find-part,
+.find-widget .find-part {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  width: 100% !important;
+  gap: 4px !important;
+  /* 核心修复：增加按钮间距 */
+}
+
+/* 增加按钮本身的左右间距，确保不拥挤 */
+.find-widget .button,
+.find-widget .monaco-custom-toggle {
+  margin: 0 1px !important;
+}
+
+/* 4. 关闭按钮：使用宽泛匹配 */
+.find-widget .button.close-widget,
+.find-widget .button[class*="close"],
+.find-widget .button[title*="Close"],
+.find-widget .button[aria-label*="Close"] {
+  position: absolute !important;
+  top: 2px !important;
+  right: 2px !important;
+  display: flex !important;
+  width: 24px !important;
+  height: 24px !important;
+  z-index: 100001 !important;
+}
+
+/* 5. 其他按钮 */
+.find-widget .button:not([class*="close"]),
+.find-widget .monaco-custom-toggle {
+  position: relative !important;
+  overflow: visible !important;
+  flex-shrink: 0 !important;
+}
+
+/* 6. 中文 Tooltip 通用样式 */
+.find-widget .button:hover::after,
+.find-widget .monaco-custom-toggle:hover::after,
+.find-widget .codicon:hover::after,
+.find-widget .monaco-checkbox:hover::after {
+  position: absolute;
+  bottom: -28px;
+  right: 0;
+  padding: 4px 8px;
+  background: #252526;
+  color: #fff;
+  border: 1px solid #454545;
+  border-radius: 3px;
+  font-size: 11px;
+  white-space: nowrap;
+  z-index: 100002;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  font-family: "Microsoft YaHei", sans-serif;
+  content: attr(aria-label);
+  /* 最终回退：使用自带的 Label */
+}
+
+/* 7. 文案映射 (增强匹配) */
+
+/* Prev/Next */
+.find-widget .button.previous:hover::after,
+.find-widget .button[class*="previous"]:hover::after,
+.find-widget .button[title*="Previous"]:hover::after {
+  content: "上一个 (Shift+Enter)";
+}
+
+.find-widget .button.next:hover::after,
+.find-widget .button[class*="next"]:hover::after,
+.find-widget .button[title*="Next"]:hover::after {
+  content: "下一个 (Enter)";
+}
+
+/* Options Toggles (Often inside .monaco-checkbox or .codicon) */
+/* Case Sensitive */
+.find-widget .codicon-case-sensitive:hover::after,
+.find-widget [class*="case-sensitive"]:hover::after,
+.find-widget [aria-label*="Case"]:hover::after {
+  content: "区分大小写 (Alt+C)";
+}
+
+/* Whole Word */
+.find-widget .codicon-whole-word:hover::after,
+.find-widget [class*="whole-word"]:hover::after,
+.find-widget [aria-label*="Word"]:hover::after {
+  content: "全字匹配 (Alt+W)";
+}
+
+/* Regex */
+.find-widget .codicon-regex:hover::after,
+.find-widget [class*="regex"]:hover::after,
+.find-widget [aria-label*="Regex"]:hover::after {
+  content: "正则表达式 (Alt+R)";
+}
+
+/* Selection */
+.find-widget .monaco-custom-toggle:hover::after,
+.find-widget [class*="toggle-selection"]:hover::after,
+.find-widget [aria-label*="Selection"]:hover::after {
+  content: "在选区中查找 (Alt+L)";
+}
+
+/* Close */
+.find-widget .button[class*="close"]:hover::after,
+.find-widget .button[title*="Close"]:hover::after {
+  content: "关闭 (Esc)";
+}
+
+/* 8. 交互修复 */
+.find-widget .button,
+.find-widget .monaco-custom-toggle,
+.find-widget .codicon {
+  pointer-events: auto !important;
+}

@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+python-multipart
+pydantic
+pydantic-settings
+sqlmodel
+rich
+loguru
+python-dotenv
+aiofiles
+nornir
+nornir_utils
+nornir_napalm
+napalm
+pytest
+requests
+dnspython

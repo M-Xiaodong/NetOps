@@ -1,0 +1,20 @@
+// 备份原始逻辑，避免丢失 API 调用部分
+/*
+    const fetchDevices = async () => {
+        setLoading(true);
+        try {
+            const token = localStorage.getItem('token');
+            const res = await fetch('/api/devices', {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            if (res.ok) {
+                const data = await res.json();
+                setDevices(data);
+            }
+        } catch (err) {
+            console.error("Fetch devices error:", err);
+        } finally {
+            setLoading(false);
+        }
+    };
+*/

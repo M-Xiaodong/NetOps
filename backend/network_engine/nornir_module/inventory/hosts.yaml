@@ -1,0 +1,35 @@
+---
+BJ_office_101:
+    hostname: 10.88.51.101
+    groups:
+        - Huawei
+        - BJ
+BJ_office_102:
+    hostname: 10.88.51.102
+    groups:
+        - Huawei
+        - BJ
+BJ_office_103:
+    hostname: 10.88.51.103
+    groups:
+        - Huawei
+        - BJ
+BJ-office-104:
+    hostname: 10.88.51.104
+    groups:
+        - Huawei
+        - BJ
+    data: #自定义信息
+      series: S5720S-52X-LI-AC
+BJ_office_201&Camera-POE:
+    hostname: 10.88.51.201
+    groups:
+        - Huawei
+        - BJ
+BJ_office_202&AP-POE:
+    hostname: 10.88.51.202
+    groups:
+        - Huawei
+        - BJ
+
+
