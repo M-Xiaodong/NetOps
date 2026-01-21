@@ -4,16 +4,24 @@
 ![License](https://img.shields.io/badge/License-CC--BY--NC--4.0-red.svg)
 
 **NetOps** 是一款专为网络工程师设计的轻量级、响应式自动化运维平台。它立足于“极速、透明、国产化适配”三大核心理念，通过现代化的 Web 界面将复杂的 Nornir 自动化逻辑转化为毫秒级的交互体验。
+## ✨ 核心功能
 
+- 🚀 **配置备份**：对不同时间的配置文件进行比对。
+- 📊 **网工工具箱**：IP计算器、划分子网、反掩码配置生成、单位换算、下载时间计算、MAC地址查询厂商并格式化文本、DNS解析结果对比差异。
+详细功能见下图：
 ---
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/ccc46edc-3257-493f-b428-0deb03b169b6" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/5fdd7e71-b357-4a3a-830e-56629ddb9534" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/d3cc99bf-6b41-4380-b358-f799c2857b2f" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/84a2972c-f402-4836-84fd-b119513316d7" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/b5a73d20-a43d-44cd-9a18-cc15bfccf58f" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/f8a9a766-02c7-4db1-8377-006da5e443f3" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/b78338cc-fa96-4e26-a4ba-672bfe62118e" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/dc3c0717-8e70-4837-b2b5-6eb579bef57f" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/aea3bc5a-d6c7-4547-bf0c-f944513957af" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/a4c2cba7-cdd5-4204-8ea5-a68420d06155" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/6382c0e4-239b-4157-a287-3e59ff48023d" />
 
-## ✨ 核心特性
-
-- 🚀 **极速 SSH 连接引擎**：底层基于 Nornir + NAPALM 优化，通过禁用冗余 Agent 探测与延迟因子校准，实现 SSH 握手时间从 20s+ 降至 **1s 以内**。
-- 📊 **可视化资产巡检墙**：一站式监控全网设备健康度。CPU、内存、温度及接口流量实时聚合展示，异常状态一目了然。
-- 🛡️ **华为 VRP 深度适配**：完美适配华为 S5735 等主流国产交换机，通过 CLI 指令兜底解析与正则匹配，彻底解决内存利用率 0% 等解析难题。
-- 📜 **实时命令审计 (Live-Flow)**：所有自动化执行步骤均包含底层 CLI 指令审计，运维过程黑盒变透明。
-- 🔒 **并发安全与排队机制**：内置线程锁保护，防止多任务下发时对网络设备造成高频连接冲击。
 
 ---
 
